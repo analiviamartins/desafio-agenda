@@ -45,3 +45,17 @@ function sendMsg(msg, type){
         mensa.innerHTML = "";
     }, 3000);
 }
+class Contato{
+    constructor(nome, fix, cell, foto, data, email, cep, city, insta, git){
+        this.nome= nome;
+        this.fix= fix;
+        this.cell= cell;
+        this.foto= foto;
+        this.data= data;
+        this.email= email;
+        this.cep= cep;
+        this.city=city;
+        this.insta= insta;
+        this.git= git;
+    }
+}
