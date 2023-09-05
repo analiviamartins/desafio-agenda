@@ -58,6 +58,13 @@ class Contato{
         this.insta= insta;
         this.git= git;
     }
+    isURLValida(url) {
+        if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 function createContato(){
@@ -74,4 +81,35 @@ function createContato(){
 
     const contato = new Contato(nome, fix, cell, foto, data, email, cep, city, insta, git);
     console.log(contato);
+}
+
+class Listcontatos{
+    constructor() {
+        this.contatos = [];
+        console.log("tá indo até a Listcontatos");
+    }
+    add(contato){
+        if(checkInputs()){
+            sendMsg("Preencha os campos", "error");
+        }else if(isURLValida(url)){
+            sendMsg("Imagem inválida", "error")
+        }else{
+            this.contatos.push(contato);
+            sendMsg("contato adicionado com sucesso!", "success");
+            limparInputs();
+        }
+    }
+}
+
+function limparInputs(){
+    document.getElementById("name_input").value = "";
+    document.getElementById("fix_input").value = "";
+    document.getElementById("cell_input").value = "";
+    document.getElementById("foto_input").value = "";
+    document.getElementById("date_input").value = "";
+    document.getElementById("email_input").value = "";
+    document.getElementById("cep_input").value = "";
+    document.getElementById("city_input").value = "";
+    document.getElementById("insta_input").value = "";
+    document.getElementById("git_input").value = "";
 }
