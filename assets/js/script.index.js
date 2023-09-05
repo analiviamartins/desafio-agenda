@@ -32,3 +32,16 @@ function checkInputs(){
     }
 }
 
+function sendMsg(msg, type){
+    let mensa= document.getElementById("msg");
+    mensa.innerHtml="";
+
+    let showMsg= `
+        <p class='${type}'>${msg}</p>
+    `
+    mensa.innerHtml += showMsg;
+
+    setTimeout(function () {
+        mensa.innerHTML = "";
+    }, 3000);
+}
